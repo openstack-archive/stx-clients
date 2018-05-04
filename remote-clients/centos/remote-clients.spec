@@ -1,6 +1,6 @@
 Summary: Remote-Clients
 Name: remote-clients
-Version: 2.0.1
+Version: 2.0.2
 Release: %{tis_patch_ver}%{?_tis_dist}
 License: Apache-2.0
 Group: devel
@@ -23,6 +23,7 @@ BuildRequires: python-openstacksdk-sdk
 BuildRequires: cgts-client-sdk
 BuildRequires: python-osc-lib-sdk
 BuildRequires: python-muranoclient-sdk
+BuildRequires: distributedcloud-client-sdk
 
 %define cgcs_sdk_deploy_dir /opt/deploy/cgcs_sdk
 %define remote_client_dir /usr/share/remote-clients

@@ -11,3 +11,4 @@ osc-lib
 keystoneauth1
 openstacksdk
 python-muranoclient
+distributedcloud-client
