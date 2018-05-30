@@ -1,0 +1,563 @@
+[
+  {
+    "_id": "Overview",
+    "_type": "dashboard",
+    "_source": {
+      "title": "Overview",
+      "hits": 0,
+      "description": "",
+      "panelsJSON": "[{\"col\":4,\"id\":\"Unique-Systems-ampersand-Hosts-Counts\",\"panelIndex\":1,\"row\":1,\"size_x\":2,\"size_y\":2,\"type\":\"visualization\"},{\"col\":1,\"id\":\"Alarm-Severity-Summary\",\"panelIndex\":3,\"row\":1,\"size_x\":3,\"size_y\":2,\"type\":\"visualization\"},{\"col\":1,\"id\":\"Log-Activity-PER-HOST\",\"panelIndex\":5,\"row\":3,\"size_x\":12,\"size_y\":3,\"type\":\"visualization\"},{\"col\":6,\"id\":\"Raw-Log-Severity-Pie-Chart\",\"panelIndex\":6,\"row\":1,\"size_x\":3,\"size_y\":2,\"type\":\"visualization\"},{\"col\":9,\"id\":\"Customer-Log-Severity-Summary\",\"panelIndex\":9,\"row\":1,\"size_x\":4,\"size_y\":2,\"type\":\"visualization\"},{\"id\":\"All-Logs\",\"type\":\"search\",\"panelIndex\":10,\"size_x\":12,\"size_y\":6,\"col\":1,\"row\":6,\"columns\":[\"_source\"],\"sort\":[\"@timestamp\",\"desc\"]}]",
+      "optionsJSON": "{\"darkTheme\":false}",
+      "uiStateJSON": "{\"P-1\":{\"spy\":{\"mode\":{\"fill\":false,\"name\":null}}},\"P-3\":{\"spy\":{\"mode\":{\"fill\":false,\"name\":null}},\"vis\":{\"legendOpen\":false}},\"P-4\":{\"vis\":{\"legendOpen\":false}},\"P-5\":{\"spy\":{\"mode\":{\"fill\":false,\"name\":null}},\"vis\":{\"legendOpen\":false}},\"P-6\":{\"vis\":{\"legendOpen\":true}},\"P-9\":{\"spy\":{\"mode\":{\"fill\":false,\"name\":null}},\"vis\":{\"legendOpen\":false}}}",
+      "version": 1,
+      "timeRestore": false,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[{\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}}}]}"
+      }
+    }
+  },
+  {
+    "_id": "Host-ampersand-VM-Event-Activity",
+    "_type": "dashboard",
+    "_source": {
+      "title": "Host & VM Customer Log Event Activity",
+      "hits": 0,
+      "description": "",
+      "panelsJSON": "[\n  {\n    \"col\": 1,\n    \"columns\": [\n      \"_source\"\n    ],\n    \"id\": \"Logs-Host-events\",\n    \"panelIndex\": 5,\n    \"row\": 4,\n    \"size_x\": 6,\n    \"size_y\": 5,\n    \"sort\": [\n      \"@timestamp\",\n      \"desc\"\n    ],\n    \"type\": \"search\"\n  },\n  {\n    \"col\": 7,\n    \"columns\": [\n      \"_source\"\n    ],\n    \"id\": \"Logs-VM-events\",\n    \"panelIndex\": 6,\n    \"row\": 4,\n    \"size_x\": 6,\n    \"size_y\": 5,\n    \"sort\": [\n      \"@timestamp\",\n      \"desc\"\n    ],\n    \"type\": \"search\"\n  },\n  {\n    \"col\": 1,\n    \"id\": \"Customer-Host-slash-VM-Log-Severity-Summary\",\n    \"panelIndex\": 7,\n    \"row\": 1,\n    \"size_x\": 3,\n    \"size_y\": 3,\n    \"type\": \"visualization\"\n  },\n  {\n    \"id\": \"Host-and-VM-Events-Date-Histogram\",\n    \"type\": \"visualization\",\n    \"panelIndex\": 8,\n    \"size_x\": 9,\n    \"size_y\": 3,\n    \"col\": 4,\n    \"row\": 1\n  }\n]",
+      "optionsJSON": "{\n  \"darkTheme\": false\n}",
+      "uiStateJSON": "{\n  \"P-7\": {\n    \"vis\": {\n      \"legendOpen\": false\n    }\n  },\n  \"P-8\": {\n    \"vis\": {\n      \"legendOpen\": false\n    }\n  }\n}",
+      "version": 1,
+      "timeRestore": false,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"filter\": [\n    {\n      \"query\": {\n        \"query_string\": {\n          \"analyze_wildcard\": true,\n          \"query\": \"*\"\n        }\n      }\n    }\n  ]\n}"
+      }
+    }
+  },
+  {
+    "_id": "Resource-Add-slash-Delete-Activity",
+    "_type": "dashboard",
+    "_source": {
+      "title": "Resource Add / Delete Activity",
+      "hits": 0,
+      "description": "",
+      "panelsJSON": "[{\"col\":1,\"id\":\"Unique-Systems-ampersand-Hosts-Counts\",\"panelIndex\":1,\"row\":1,\"size_x\":2,\"size_y\":3,\"type\":\"visualization\"},{\"col\":3,\"id\":\"Resource-Add-slash-Delete-Activity\",\"panelIndex\":2,\"row\":1,\"size_x\":10,\"size_y\":3,\"type\":\"visualization\"},{\"id\":\"Resource-Add-slash-Delete-Table\",\"type\":\"search\",\"panelIndex\":3,\"size_x\":12,\"size_y\":5,\"col\":1,\"row\":4,\"columns\":[\"_source\"],\"sort\":[\"@timestamp\",\"desc\"]}]",
+      "optionsJSON": "{\"darkTheme\":false}",
+      "uiStateJSON": "{}",
+      "version": 1,
+      "timeRestore": false,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[{\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}}}]}"
+      }
+    }
+  },
+  {
+    "_id": "Login-Authentication-Audit-Log",
+    "_type": "dashboard",
+    "_source": {
+      "title": "Login Authentication Audit Log",
+      "hits": 0,
+      "description": "",
+      "panelsJSON": "[{\"id\":\"Horizon-Authentication-Audit-Log\",\"type\":\"search\",\"panelIndex\":1,\"size_x\":6,\"size_y\":4,\"col\":7,\"row\":1,\"columns\":[\"_source\"],\"sort\":[\"@timestamp\",\"desc\"]},{\"id\":\"SSH-slash-SFTP-slash-SUDO-slash-Postgres-Authentication-Audit-Log\",\"type\":\"search\",\"panelIndex\":2,\"size_x\":6,\"size_y\":4,\"col\":7,\"row\":5,\"columns\":[\"_source\"],\"sort\":[\"@timestamp\",\"desc\"]},{\"id\":\"Horizon-Authentication-Audit-Log-Date-Histogram\",\"type\":\"visualization\",\"panelIndex\":3,\"size_x\":6,\"size_y\":4,\"col\":1,\"row\":1},{\"id\":\"SSH-slash-SFTP-slash-sudo-slash-postgres-Authentication-Audit-Log-Date-Histogram\",\"type\":\"visualization\",\"panelIndex\":4,\"size_x\":6,\"size_y\":4,\"col\":1,\"row\":5}]",
+      "optionsJSON": "{\"darkTheme\":false}",
+      "uiStateJSON": "{\"P-3\":{\"vis\":{\"legendOpen\":false}},\"P-4\":{\"vis\":{\"legendOpen\":false}}}",
+      "version": 1,
+      "timeRestore": false,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[{\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}}}]}"
+      }
+    }
+  },
+  {
+    "_id": "Command-Audit-Log",
+    "_type": "dashboard",
+    "_source": {
+      "title": "Command Audit Log",
+      "hits": 0,
+      "description": "",
+      "panelsJSON": "[{\"id\":\"Bash-Audit-Log\",\"type\":\"search\",\"panelIndex\":1,\"size_x\":6,\"size_y\":4,\"col\":7,\"row\":1,\"columns\":[\"_source\"],\"sort\":[\"@timestamp\",\"desc\"]},{\"id\":\"REST-API-Audit-Log\",\"type\":\"search\",\"panelIndex\":2,\"size_x\":6,\"size_y\":4,\"col\":7,\"row\":5,\"columns\":[\"_source\"],\"sort\":[\"@timestamp\",\"desc\"]},{\"id\":\"BASH-Audit-Log-Date-Histogram\",\"type\":\"visualization\",\"panelIndex\":3,\"size_x\":6,\"size_y\":4,\"col\":1,\"row\":1},{\"id\":\"REST-API-Audit-Log-Histogram\",\"type\":\"visualization\",\"panelIndex\":4,\"size_x\":6,\"size_y\":4,\"col\":1,\"row\":5}]",
+      "optionsJSON": "{\"darkTheme\":false}",
+      "uiStateJSON": "{\"P-3\":{\"vis\":{\"legendOpen\":false}},\"P-4\":{\"vis\":{\"legendOpen\":false}}}",
+      "version": 1,
+      "timeRestore": false,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[{\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}}}]}"
+      }
+    }
+  },
+  {
+    "_id": "System-Troubleshooting",
+    "_type": "dashboard",
+    "_source": {
+      "title": "System Troubleshooting",
+      "hits": 0,
+      "description": "",
+      "panelsJSON": "[{\"id\":\"DEBUG-Maintenance-ampersand-Inventory-Logs-(First-Level)\",\"type\":\"search\",\"panelIndex\":1,\"size_x\":6,\"size_y\":3,\"col\":7,\"row\":3,\"columns\":[\"_source\"],\"sort\":[\"@timestamp\",\"desc\"]},{\"id\":\"DEBUG-Service-Manager-Logs\",\"type\":\"search\",\"panelIndex\":2,\"size_x\":6,\"size_y\":3,\"col\":1,\"row\":3,\"columns\":[\"_source\"],\"sort\":[\"@timestamp\",\"desc\"]},{\"id\":\"DEBUG-VM-Logs-(First-Level-NOVA)\",\"type\":\"search\",\"panelIndex\":3,\"size_x\":12,\"size_y\":4,\"col\":1,\"row\":6,\"columns\":[\"_source\"],\"sort\":[\"@timestamp\",\"desc\"]},{\"id\":\"System-Troubleshooting-Logs-Date-Histogram\",\"type\":\"visualization\",\"panelIndex\":4,\"size_x\":12,\"size_y\":2,\"col\":1,\"row\":1}]",
+      "optionsJSON": "{\"darkTheme\":false}",
+      "uiStateJSON": "{\"P-4\":{\"vis\":{\"legendOpen\":false}}}",
+      "version": 1,
+      "timeRestore": false,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[{\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}}}]}"
+      }
+    }
+  },
+  {
+    "_id": "Resource-Add-slash-Delete-Table",
+    "_type": "search",
+    "_source": {
+      "title": "Resource Add / Delete Table",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "_source"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"logstash-*\",\"query\":{\"query_string\":{\"query\":\"( filename:\\\"fm-event.log\\\" AND message:\\\"\\\\\\\"state\\\\\\\" : \\\\\\\"msg\\\\\\\"\\\" AND message:200* AND ( message:\\\"added\\\" OR message:\\\"delete\\\" ) ) OR ( filename:\\\"cinder-volume.log\\\" AND message:\\\"volume successfully\\\" ) OR ( filename:\\\"fm-event.log\\\" AND message:\\\"\\\\\\\"state\\\\\\\" : \\\\\\\"msg\\\\\\\"\\\"  AND ( message:700.108 OR message:700.114 ))\",\"analyze_wildcard\":true}},\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647}}"
+      }
+    }
+  },
+  {
+    "_id": "Alarms",
+    "_type": "search",
+    "_source": {
+      "title": "Alarm Activity",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "_source"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"logstash-*\",\"query\":{\"query_string\":{\"query\":\"filename:\\\"fm-event.log\\\" AND ( message:\\\"\\\\\\\"state\\\\\\\" : \\\\\\\"set\\\\\\\"\\\" OR  message:\\\"\\\\\\\"state\\\\\\\" : \\\\\\\"clear\\\\\\\"\\\" )\",\"analyze_wildcard\":true}},\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647}}"
+      }
+    }
+  },
+  {
+    "_id": "Logs",
+    "_type": "search",
+    "_source": {
+      "title": "Customer Logs",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "_source"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"logstash-*\",\"query\":{\"query_string\":{\"query\":\"filename:\\\"fm-event.log\\\" AND message:\\\"\\\\\\\"state\\\\\\\" : \\\\\\\"msg\\\\\\\"\\\"\",\"analyze_wildcard\":true}},\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647}}"
+      }
+    }
+  },
+  {
+    "_id": "All-Logs",
+    "_type": "search",
+    "_source": {
+      "title": "All Logs",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "_source"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"logstash-*\",\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}},\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647}}"
+      }
+    }
+  },
+  {
+    "_id": "DEBUG-Maintenance-ampersand-Inventory-Logs-(First-Level)",
+    "_type": "search",
+    "_source": {
+      "title": "DEBUG - Maintenance & Inventory Logs (First Level)",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "_source"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"logstash-*\",\"query\":{\"query_string\":{\"query\":\"filename:\\\"mtcAgent.log\\\" OR filename:\\\"mtcClient.log\\\" OR filename:\\\"sysinv.log\\\"\",\"analyze_wildcard\":true}},\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647}}"
+      }
+    }
+  },
+  {
+    "_id": "Logs-Host-events",
+    "_type": "search",
+    "_source": {
+      "title": "Customer Logs - Host events",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "_source"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"logstash-*\",\"query\":{\"query_string\":{\"query\":\"filename:\\\"fm-event.log\\\" AND message:\\\"\\\\\\\"state\\\\\\\" : \\\\\\\"msg\\\\\\\"\\\" AND message:200*\",\"analyze_wildcard\":true}},\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647}}"
+      }
+    }
+  },
+  {
+    "_id": "DEBUG-VM-Logs-(First-Level-NOVA)",
+    "_type": "search",
+    "_source": {
+      "title": "DEBUG - VM Logs (First Level - NOVA)",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "_source"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"logstash-*\",\"query\":{\"query_string\":{\"query\":\"filename:\\\"nova-compute\\\" OR filename:\\\"nova-scheduler.log\\\" OR filename:\\\"nova-conductor.log\\\"\",\"analyze_wildcard\":true}},\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647}}"
+      }
+    }
+  },
+  {
+    "_id": "DEBUG-Service-Manager-Logs",
+    "_type": "search",
+    "_source": {
+      "title": "DEBUG - Service Manager Logs (First Level)",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "_source"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"logstash-*\",\"query\":{\"query_string\":{\"query\":\"filename:\\\"sm.log\\\" OR filename:\\\"sm-customer\\\" OR filename:\\\"daemon-ocf.log\\\"\",\"analyze_wildcard\":true}},\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647}}"
+      }
+    }
+  },
+  {
+    "_id": "Logs-VM-events",
+    "_type": "search",
+    "_source": {
+      "title": "Customer Logs - VM events",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "_source"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"logstash-*\",\"query\":{\"query_string\":{\"query\":\"filename:\\\"fm-event.log\\\" AND message:\\\"\\\\\\\"state\\\\\\\" : \\\\\\\"msg\\\\\\\"\\\" AND message:700* AND message:instance\",\"analyze_wildcard\":true}},\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647}}"
+      }
+    }
+  },
+  {
+    "_id": "Horizon-Authentication-Audit-Log",
+    "_type": "search",
+    "_source": {
+      "title": "Horizon Authentication Audit Log",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "_source"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"logstash-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"query_string\":{\"query\":\"filename:horizon.log\",\"analyze_wildcard\":true}}}"
+      }
+    }
+  },
+  {
+    "_id": "REST-API-Audit-Log",
+    "_type": "search",
+    "_source": {
+      "title": "REST API Audit Log",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "_source"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"logstash-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"query_string\":{\"query\":\"filename:api.log\",\"analyze_wildcard\":true}}}"
+      }
+    }
+  },
+  {
+    "_id": "SSH-slash-SFTP-slash-SUDO-slash-Postgres-Authentication-Audit-Log",
+    "_type": "search",
+    "_source": {
+      "title": "SSH / SFTP / sudo / postgres Authentication Audit Log",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "_source"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"index\": \"logstash-*\",\n  \"filter\": [],\n  \"highlight\": {\n    \"pre_tags\": [\n      \"@kibana-highlighted-field@\"\n    ],\n    \"post_tags\": [\n      \"@/kibana-highlighted-field@\"\n    ],\n    \"fields\": {\n      \"*\": {}\n    },\n    \"require_field_match\": false,\n    \"fragment_size\": 2147483647\n  },\n  \"query\": {\n    \"query_string\": {\n      \"query\": \"filename:auth.log\",\n      \"analyze_wildcard\": true\n    }\n  }\n}"
+      }
+    }
+  },
+  {
+    "_id": "Bash-Audit-Log",
+    "_type": "search",
+    "_source": {
+      "title": "BASH Audit Log",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "_source"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"index\": \"logstash-*\",\n  \"filter\": [],\n  \"highlight\": {\n    \"pre_tags\": [\n      \"@kibana-highlighted-field@\"\n    ],\n    \"post_tags\": [\n      \"@/kibana-highlighted-field@\"\n    ],\n    \"fields\": {\n      \"*\": {}\n    },\n    \"require_field_match\": false,\n    \"fragment_size\": 2147483647\n  },\n  \"query\": {\n    \"query_string\": {\n      \"query\": \"filename:bash.log\",\n      \"analyze_wildcard\": true\n    }\n  }\n}"
+      }
+    }
+  },
+  {
+    "_id": "Customer-Log-Severity-Summary",
+    "_type": "visualization",
+    "_source": {
+      "title": "Customer Log Severity Summary",
+      "visState": "{\"title\":\"Customer Log Severity Summary\",\"type\":\"histogram\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"scale\":\"linear\",\"mode\":\"stacked\",\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"filters\",\"schema\":\"segment\",\"params\":{\"filters\":[{\"input\":{\"query\":{\"query_string\":{\"query\":\"message:\\\"\\\\\\\"state\\\\\\\" : \\\\\\\"msg\\\\\\\"\\\" AND message:\\\"\\\\\\\"severity\\\\\\\" : \\\\\\\"critical\\\\\\\"\\\"\",\"analyze_wildcard\":true}}},\"label\":\"CRITICAL\"},{\"input\":{\"query\":{\"query_string\":{\"query\":\"message:\\\"\\\\\\\"state\\\\\\\" : \\\\\\\"msg\\\\\\\"\\\" AND message:\\\"\\\\\\\"severity\\\\\\\" : \\\\\\\"major\\\\\\\"\\\"\",\"analyze_wildcard\":true}}},\"label\":\"MAJOR\"},{\"input\":{\"query\":{\"query_string\":{\"query\":\"message:\\\"\\\\\\\"state\\\\\\\" : \\\\\\\"msg\\\\\\\"\\\" AND message:\\\"\\\\\\\"severity\\\\\\\" : \\\\\\\"minor\\\\\\\"\\\"\",\"analyze_wildcard\":true}}},\"label\":\"Minor\"},{\"input\":{\"query\":{\"query_string\":{\"query\":\"message:\\\"\\\\\\\"state\\\\\\\" : \\\\\\\"msg\\\\\\\"\\\" AND message:\\\"\\\\\\\"severity\\\\\\\" : \\\\\\\"warning\\\\\\\"\\\"\",\"analyze_wildcard\":true}}},\"label\":\"Warning\"},{\"input\":{\"query\":{\"query_string\":{\"query\":\"message:\\\"\\\\\\\"state\\\\\\\" : \\\\\\\"msg\\\\\\\"\\\" AND message:\\\"\\\\\\\"severity\\\\\\\" : \\\\\\\"not-applicable\\\\\\\"\\\"\",\"analyze_wildcard\":true}}},\"label\":\"Not-Applicable\"}]}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "savedSearchId": "Logs",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "Alarm-Severity-Summary",
+    "_type": "visualization",
+    "_source": {
+      "title": "Alarm Severity Summary",
+      "visState": "{\"title\":\"Alarm Severity Summary\",\"type\":\"histogram\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"scale\":\"linear\",\"mode\":\"stacked\",\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"filters\",\"schema\":\"segment\",\"params\":{\"filters\":[{\"input\":{\"query\":{\"query_string\":{\"query\":\"( message:\\\"\\\\\\\"state\\\\\\\" : \\\\\\\"set\\\\\\\"\\\" OR  message:\\\"\\\\\\\"state\\\\\\\" : \\\\\\\"clear\\\\\\\"\\\" ) AND message:\\\"\\\\\\\"severity\\\\\\\" : \\\\\\\"critical\\\\\\\"\\\"\",\"analyze_wildcard\":true}}},\"label\":\"CRITICAL\"},{\"input\":{\"query\":{\"query_string\":{\"query\":\"( message:\\\"\\\\\\\"state\\\\\\\" : \\\\\\\"set\\\\\\\"\\\" OR  message:\\\"\\\\\\\"state\\\\\\\" : \\\\\\\"clear\\\\\\\"\\\" ) AND message:\\\"\\\\\\\"severity\\\\\\\" : \\\\\\\"major\\\\\\\"\\\"\",\"analyze_wildcard\":true}}},\"label\":\"Major\"},{\"input\":{\"query\":{\"query_string\":{\"query\":\"( message:\\\"\\\\\\\"state\\\\\\\" : \\\\\\\"set\\\\\\\"\\\" OR  message:\\\"\\\\\\\"state\\\\\\\" : \\\\\\\"clear\\\\\\\"\\\" ) AND message:\\\"\\\\\\\"severity\\\\\\\" : \\\\\\\"minor\\\\\\\"\\\"\",\"analyze_wildcard\":true}}},\"label\":\"minor\"},{\"input\":{\"query\":{\"query_string\":{\"query\":\"( message:\\\"\\\\\\\"state\\\\\\\" : \\\\\\\"set\\\\\\\"\\\" OR  message:\\\"\\\\\\\"state\\\\\\\" : \\\\\\\"clear\\\\\\\"\\\" ) AND message:\\\"\\\\\\\"severity\\\\\\\" : \\\\\\\"warning\\\\\\\"\\\"\",\"analyze_wildcard\":true}}},\"label\":\"warning\"}]}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "savedSearchId": "Alarms",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "Log-Activity-PER-HOST",
+    "_type": "visualization",
+    "_source": {
+      "title": "Log Activity PER HOST",
+      "visState": "{\"title\":\"Log Activity PER HOST\",\"type\":\"histogram\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"scale\":\"linear\",\"mode\":\"stacked\",\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"node.raw\",\"size\":100,\"order\":\"desc\",\"orderBy\":\"_term\",\"customLabel\":\"Log Activity per Host\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"logstash-*\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "Raw-Log-Severity-Pie-Chart",
+    "_type": "visualization",
+    "_source": {
+      "title": "Raw Log Severity Pie Chart",
+      "visState": "{\"title\":\"Raw Log Severity Pie Chart\",\"type\":\"pie\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"isDonut\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"level.raw\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"logstash-*\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "Unique-Systems-ampersand-Hosts-Counts",
+    "_type": "visualization",
+    "_source": {
+      "title": "Unique Systems & Hosts Counts",
+      "visState": "{\"title\":\"Unique Systems & Hosts Counts\",\"type\":\"metric\",\"params\":{\"handleNoResults\":true,\"fontSize\":60},\"aggs\":[{\"id\":\"2\",\"type\":\"cardinality\",\"schema\":\"metric\",\"params\":{\"field\":\"system_name.raw\",\"customLabel\":\"Systems\"}},{\"id\":\"3\",\"type\":\"cardinality\",\"schema\":\"metric\",\"params\":{\"field\":\"node.raw\",\"customLabel\":\"Hosts\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"logstash-*\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "Resource-Add-slash-Delete-Activity",
+    "_type": "visualization",
+    "_source": {
+      "title": "Resource Add & Delete Activity",
+      "visState": "{\n  \"title\": \"Resource Add / Delete Activity\",\n  \"type\": \"histogram\",\n  \"params\": {\n    \"shareYAxis\": true,\n    \"addTooltip\": true,\n    \"addLegend\": true,\n    \"scale\": \"linear\",\n    \"mode\": \"stacked\",\n    \"times\": [],\n    \"addTimeMarker\": false,\n    \"defaultYExtents\": false,\n    \"setYExtents\": false,\n    \"yAxis\": {}\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"type\": \"count\",\n      \"schema\": \"metric\",\n      \"params\": {}\n    },\n    {\n      \"id\": \"2\",\n      \"type\": \"date_histogram\",\n      \"schema\": \"split\",\n      \"params\": {\n        \"field\": \"@timestamp\",\n        \"interval\": \"d\",\n        \"customInterval\": \"2h\",\n        \"min_doc_count\": 1,\n        \"extended_bounds\": {},\n        \"customLabel\": \"\",\n        \"row\": false\n      }\n    },\n    {\n      \"id\": \"3\",\n      \"type\": \"filters\",\n      \"schema\": \"group\",\n      \"params\": {\n        \"filters\": [\n          {\n            \"input\": {\n              \"query\": {\n                \"query_string\": {\n                  \"query\": \"message:200* AND ( message:\\\"added\\\" OR message:\\\"delete\\\" )\",\n                  \"analyze_wildcard\": true\n                }\n              }\n            },\n            \"label\": \"Hosts\"\n          },\n          {\n            \"input\": {\n              \"query\": {\n                \"query_string\": {\n                  \"query\": \"filename:\\\"fm-event.log\\\" AND ( message:700.108 OR message:700.114 )\",\n                  \"analyze_wildcard\": true\n                }\n              }\n            },\n            \"label\": \"VMs\"\n          },\n          {\n            \"input\": {\n              \"query\": {\n                \"query_string\": {\n                  \"query\": \"message:\\\"volume successfully\\\"\",\n                  \"analyze_wildcard\": true\n                }\n              }\n            },\n            \"label\": \"Volumes\"\n          }\n        ]\n      }\n    }\n  ],\n  \"listeners\": {}\n}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"index\": \"logstash-*\",\n  \"query\": {\n    \"query_string\": {\n      \"query\": \"( filename:\\\"fm-event.log\\\" AND message:\\\"\\\\\\\"state\\\\\\\" : \\\\\\\"msg\\\\\\\"\\\"  )  OR filename:\\\"cinder-volume.log\\\" OR filename:\\\"openstack.log\\\"\",\n      \"analyze_wildcard\": true\n    }\n  },\n  \"filter\": []\n}"
+      }
+    }
+  },
+  {
+    "_id": "Resource-Add-ampersand-Delete-Activity",
+    "_type": "visualization",
+    "_source": {
+      "title": "Resource Add & Delete Activity",
+      "visState": "{\"title\":\"Resource Add & Delete Activity\",\"type\":\"histogram\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"scale\":\"linear\",\"mode\":\"stacked\",\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"split\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{},\"customLabel\":\"\",\"row\":false}},{\"id\":\"3\",\"type\":\"filters\",\"schema\":\"group\",\"params\":{\"filters\":[{\"input\":{\"query\":{\"query_string\":{\"query\":\"message:200* AND ( message:\\\"added\\\" OR message:\\\"delete\\\" )\",\"analyze_wildcard\":true}}},\"label\":\"Hosts\"},{\"input\":{\"query\":{\"query_string\":{\"query\":\"filename:\\\"fm-event.log\\\" AND ( message:700.108 OR message:700.114 )\",\"analyze_wildcard\":true}}},\"label\":\"VMs\"},{\"input\":{\"query\":{\"query_string\":{\"query\":\"message:\\\"volume successfully\\\"\",\"analyze_wildcard\":true}}},\"label\":\"Volumes\"}]}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"logstash-*\",\"query\":{\"query_string\":{\"query\":\"( filename:\\\"fm-event.log\\\" AND message:\\\"\\\\\\\"state\\\\\\\" : \\\\\\\"msg\\\\\\\"\\\"  )  OR filename:\\\"cinder-volume.log\\\" OR filename:\\\"openstack.log\\\"\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "Customer-Host-slash-VM-Log-Severity-Summary",
+    "_type": "visualization",
+    "_source": {
+      "title": "Host & VM Customer Log Severity Summary",
+      "visState": "{\n  \"title\": \"Customer Host / VM Log Severity Summary\",\n  \"type\": \"histogram\",\n  \"params\": {\n    \"shareYAxis\": true,\n    \"addTooltip\": true,\n    \"addLegend\": true,\n    \"scale\": \"linear\",\n    \"mode\": \"stacked\",\n    \"times\": [],\n    \"addTimeMarker\": false,\n    \"defaultYExtents\": false,\n    \"setYExtents\": false,\n    \"yAxis\": {}\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"type\": \"count\",\n      \"schema\": \"metric\",\n      \"params\": {}\n    },\n    {\n      \"id\": \"2\",\n      \"type\": \"filters\",\n      \"schema\": \"segment\",\n      \"params\": {\n        \"filters\": [\n          {\n            \"input\": {\n              \"query\": {\n                \"query_string\": {\n                  \"query\": \"message:\\\"\\\\\\\"state\\\\\\\" : \\\\\\\"msg\\\\\\\"\\\" AND message:\\\"\\\\\\\"severity\\\\\\\" : \\\\\\\"critical\\\\\\\"\\\" AND ( message:200* OR message:700* )\",\n                  \"analyze_wildcard\": true\n                }\n              }\n            },\n            \"label\": \"CRITICAL\"\n          },\n          {\n            \"input\": {\n              \"query\": {\n                \"query_string\": {\n                  \"query\": \"message:\\\"\\\\\\\"state\\\\\\\" : \\\\\\\"msg\\\\\\\"\\\" AND message:\\\"\\\\\\\"severity\\\\\\\" : \\\\\\\"major\\\\\\\"\\\" AND ( message:200* OR message:700* )\",\n                  \"analyze_wildcard\": true\n                }\n              }\n            },\n            \"label\": \"MAJOR\"\n          },\n          {\n            \"input\": {\n              \"query\": {\n                \"query_string\": {\n                  \"query\": \"message:\\\"\\\\\\\"state\\\\\\\" : \\\\\\\"msg\\\\\\\"\\\" AND message:\\\"\\\\\\\"severity\\\\\\\" : \\\\\\\"minor\\\\\\\"\\\" AND ( message:200* OR message:700* )\",\n                  \"analyze_wildcard\": true\n                }\n              }\n            },\n            \"label\": \"Minor\"\n          },\n          {\n            \"input\": {\n              \"query\": {\n                \"query_string\": {\n                  \"query\": \"message:\\\"\\\\\\\"state\\\\\\\" : \\\\\\\"msg\\\\\\\"\\\" AND message:\\\"\\\\\\\"severity\\\\\\\" : \\\\\\\"warning\\\\\\\"\\\" AND ( message:200* OR message:700* )\",\n                  \"analyze_wildcard\": true\n                }\n              }\n            },\n            \"label\": \"Warning\"\n          },\n          {\n            \"input\": {\n              \"query\": {\n                \"query_string\": {\n                  \"query\": \"message:\\\"\\\\\\\"state\\\\\\\" : \\\\\\\"msg\\\\\\\"\\\" AND message:\\\"\\\\\\\"severity\\\\\\\" : \\\\\\\"not-applicable\\\\\\\"\\\" AND ( message:200* OR message:700* )\",\n                  \"analyze_wildcard\": true\n                }\n              }\n            },\n            \"label\": \"Not-Applicable\"\n          }\n        ]\n      }\n    }\n  ],\n  \"listeners\": {}\n}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "savedSearchId": "Logs",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"filter\": []\n}"
+      }
+    }
+  },
+  {
+    "_id": "Host-and-VM-Events-Date-Histogram",
+    "_type": "visualization",
+    "_source": {
+      "title": "Host & VM Customer Log Events Date Histogram",
+      "visState": "{\n  \"title\": \"New Visualization\",\n  \"type\": \"histogram\",\n  \"params\": {\n    \"shareYAxis\": true,\n    \"addTooltip\": true,\n    \"addLegend\": true,\n    \"scale\": \"linear\",\n    \"mode\": \"stacked\",\n    \"times\": [],\n    \"addTimeMarker\": false,\n    \"defaultYExtents\": false,\n    \"setYExtents\": false,\n    \"yAxis\": {}\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"type\": \"count\",\n      \"schema\": \"metric\",\n      \"params\": {}\n    },\n    {\n      \"id\": \"2\",\n      \"type\": \"date_histogram\",\n      \"schema\": \"segment\",\n      \"params\": {\n        \"field\": \"@timestamp\",\n        \"interval\": \"auto\",\n        \"customInterval\": \"2h\",\n        \"min_doc_count\": 1,\n        \"extended_bounds\": {}\n      }\n    }\n  ],\n  \"listeners\": {}\n}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"index\": \"logstash-*\",\n  \"query\": {\n    \"query_string\": {\n      \"query\": \"filename:\\\"fm-event.log\\\" AND message:\\\"\\\\\\\"state\\\\\\\" : \\\\\\\"msg\\\\\\\"\\\" AND ( message:200* OR ( message:700* AND message:instance ) )\",\n      \"analyze_wildcard\": true\n    }\n  },\n  \"filter\": []\n}"
+      }
+    }
+  },
+  {
+    "_id": "System-Troubleshooting-Logs-Date-Histogram",
+    "_type": "visualization",
+    "_source": {
+      "title": "System Troubleshooting Logs Date Histogram",
+      "visState": "{\"title\":\"New Visualization\",\"type\":\"histogram\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"scale\":\"linear\",\"mode\":\"stacked\",\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"logstash-*\",\"query\":{\"query_string\":{\"query\":\"filename:\\\"sm.log\\\" OR filename:\\\"sm-customer\\\" OR filename:\\\"daemon-ocf.log\\\" OR filename:\\\"mtcAgent.log\\\" OR filename:\\\"mtcClient.log\\\" OR filename:\\\"sysinv.log\\\" OR filename:\\\"nova-compute\\\" OR filename:\\\"nova-scheduler.log\\\" OR filename:\\\"nova-conductor.log\\\"\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "SSH-slash-SFTP-slash-sudo-slash-postgres-Authentication-Audit-Log-Date-Histogram",
+    "_type": "visualization",
+    "_source": {
+      "title": "SSH / SFTP / sudo / postgres Authentication Audit Log Date Histogram",
+      "visState": "{\"title\":\"New Visualization\",\"type\":\"histogram\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"scale\":\"linear\",\"mode\":\"stacked\",\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"logstash-*\",\"query\":{\"query_string\":{\"query\":\"filename:auth.log\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "Horizon-Authentication-Audit-Log-Date-Histogram",
+    "_type": "visualization",
+    "_source": {
+      "title": "Horizon Authentication Audit Log Date Histogram",
+      "visState": "{\"title\":\"New Visualization\",\"type\":\"histogram\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"scale\":\"linear\",\"mode\":\"stacked\",\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"logstash-*\",\"query\":{\"query_string\":{\"query\":\"filename:horizon.log\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "BASH-Audit-Log-Date-Histogram",
+    "_type": "visualization",
+    "_source": {
+      "title": "BASH Audit Log Date Histogram",
+      "visState": "{\"title\":\"New Visualization\",\"type\":\"histogram\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"scale\":\"linear\",\"mode\":\"stacked\",\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"logstash-*\",\"query\":{\"query_string\":{\"query\":\"filename:bash.log\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "REST-API-Audit-Log-Histogram",
+    "_type": "visualization",
+    "_source": {
+      "title": "REST API Audit Log Histogram",
+      "visState": "{\"title\":\"New Visualization\",\"type\":\"histogram\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"scale\":\"linear\",\"mode\":\"stacked\",\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"logstash-*\",\"query\":{\"query_string\":{\"query\":\"filename:api.log\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  }
+]

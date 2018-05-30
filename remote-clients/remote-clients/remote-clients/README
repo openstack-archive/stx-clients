@@ -1,0 +1,86 @@
+Copyright © 2016-2017 Wind River Systems, Inc.
+
+SPDX-License-Identifier: Apache-2.0
+-----------------------------------------------------------------------
+
+
+Titanium Cloud Remote CLI Clients
+----------------------------------
+
+To enable access to the Titanium Cloud CLI remotely, clients and
+installer script have been packaged for install on a remote Linux distribution.
+This tarball includes several clients which can be used to issue CLI commands
+to an existing Titanium Cloud.
+
+
+Installing the Remote CLI Clients (system install)
+--------------------------------------------------
+
+To install the clients to the system packages on a Linux machine follow these
+steps:
+
+1.  Untar the provided tarball:
+        tar xfv wrs-remote-clients-xxxVERSIONxxx.tgz
+        cd wrs-remote-clients-xxxVERSIONxxx
+
+2.  Execute the provided installer script:
+        sudo ./install_clients.sh
+
+NOTE: please open a new terminal after installing for the installed bash
+      completion to take effect
+
+
+Installing the Remote CLI Clients (virtualenv)
+----------------------------------------------
+
+To install the clients within an isolated virtualenv follow these steps:
+
+1.  Create a virtualenv (if it does not already exist)
+      virtualenv MYENV
+
+2.  Activate the virtualenv
+      source MYENV/bin/activate
+
+3.  Untar the provided tarball:
+      tar xfv wrs-remote-clients-xxxVERSIONxxx.tgz
+      cd wrs-remote-clients-xxxVERSIONxxx
+
+4.  Execute the provided installer script:
+      ./install_clients.sh
+
+5.  Remember to deactivate the virtualenv when you are finished using the
+    remote clients.
+      deactivate
+
+6.  Run /etc/bash_completion to update bash completion, if your system
+    supports it. You may need to do this when opening a new console as well.
+
+Using the Remote CLI Clients
+-----------------------------
+
+1.  Download the openrc file from Horizon.
+    Log in to horizon, go to:
+    Project -> API Access -> Download OpenStack RC File
+
+2.  On your console, source the file you have just downloaded.  You will be
+    asked for your openstack password.  You will also be asked for an optional
+    CA certificate.  Enter the path to your CA certificate used for Titanium
+    Cloud if you have HTTPS configured. Press Enter if you are not using HTTPS
+
+3   Run CLI commands in the same way you would run them on the Titanium
+    Cloud Controller
+
+NOTE: The open-source OpenStack CLI Clients can NOT be installed at the same
+      time as the Titanium Cloud CLI Clients, however the Titanium Cloud CLI
+      Clients can be used to manage an open-source OpenStack cloud by sourcing
+      the appropriate openrc file for that cloud.
+
+NOTE: The remote cli installer uses pip to install depdencies. The default pip
+      package that comes with Ubuntu 16.04 has issues. Please upgrade pip to
+      the 'latest' version before running the remote client installer if you
+      are installing remote clients on a Ubuntu 16.04 system.
+          pip install --upgrade pip
+      Failure to do so can result in installation issues. The Ubuntu pip
+      package issue is currently being tracked here
+          https://bugs.launchpad.net/ubuntu/+source/salt/+bug/1586381
+
