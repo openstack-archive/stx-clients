@@ -8,15 +8,16 @@ Titanium Cloud Remote CLI Clients
 ----------------------------------
 
 To enable access to the Titanium Cloud CLI remotely, clients and
-installer script have been packaged for install on a remote Linux distribution.
+installer script have been packaged for install on a remote Linux distribution,
+MAC OS X, Windows 7 and Windows 10.
 This tarball includes several clients which can be used to issue CLI commands
 to an existing Titanium Cloud. Openstack provides clients for Python 2.7.
 Please ensure Python 2.7 is installed on your system and is the default
 Python version before running the provided remote client install script.
 
 
-Installing the Remote CLI Clients (system install)
---------------------------------------------------
+Installing the Remote CLI Clients (system install) on a Linux machine
+---------------------------------------------------------------------
 
 To install the clients to the system packages on a Linux machine follow these
 steps:
@@ -26,6 +27,70 @@ steps:
         cd wrs-remote-clients-xxxVERSIONxxx
 
 2.  Execute the provided installer script:
+        sudo ./install_clients.sh
+
+NOTE: please open a new terminal after installing for the installed bash
+      completion to take effect
+
+
+Installing the Remote CLI Clients (system install) on Windows 7 machine
+-----------------------------------------------------------------------
+
+To install the clients to the system packages on a Windows 7 machine follow
+these steps:
+
+1.  Install Cygwin as described in https://cygwin.com/install.html
+
+2.  Open a Cygwin Terminal
+
+3.  Save a copy of the setup*.exe under /usr/local/bin
+
+4.  Untar the provided tarball:
+        tar xfv wrs-remote-clients-xxxVERSIONxxx.tgz
+        cd wrs-remote-clients-xxxVERSIONxxx
+
+5.  Execute the provided installer script:
+        ./install_clients.sh
+
+NOTE: please open a new terminal after installing for the installed bash
+      completion to take effect
+
+
+Installing the Remote CLI Clients (system install) on Windows 10 machine
+------------------------------------------------------------------------
+
+To install the clients to the system packages on a Windows 10 machine follow
+these steps:
+
+1.  Enable Windows Subsystem for Linux as documented by Microsoft and install
+    the Ubuntu Linux distribution from Microsoft Store
+
+2.  Open Ubuntu Application
+
+3.  Untar the provided tarball:
+        tar xfv wrs-remote-clients-xxxVERSIONxxx.tgz
+        cd wrs-remote-clients-xxxVERSIONxxx
+
+4.  Execute the provided installer script:
+        sudo ./install_clients.sh
+
+NOTE: please open a new terminal after installing for the installed bash
+      completion to take effect
+
+
+Installing the Remote CLI Clients (system install) on MAC OS machine
+--------------------------------------------------------------------
+
+To install the clients to the system packages on a MAC OS machine follow
+these steps:
+
+1.  Open a Terminal
+
+2.  Untar the provided tarball:
+        tar xfv wrs-remote-clients-xxxVERSIONxxx.tgz
+        cd wrs-remote-clients-xxxVERSIONxxx
+
+3.  Execute the provided installer script:
         sudo ./install_clients.sh
 
 NOTE: please open a new terminal after installing for the installed bash
@@ -77,7 +142,7 @@ NOTE: The open-source OpenStack CLI Clients can NOT be installed at the same
       Clients can be used to manage an open-source OpenStack cloud by sourcing
       the appropriate openrc file for that cloud.
 
-NOTE: The remote cli installer uses pip to install depdencies. The default pip
+NOTE: The remote cli installer uses pip to install dependencies. The default pip
       package that comes with Ubuntu 16.04 has issues. Please upgrade pip to
       the 'latest' version before running the remote client installer if you
       are installing remote clients on a Ubuntu 16.04 system.

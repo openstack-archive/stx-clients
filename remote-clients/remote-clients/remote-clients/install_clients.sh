@@ -7,6 +7,8 @@
 #
 #
 
+skip_req=0
+
 while getopts ":hs" opt; do
     case $opt in
     h)
@@ -39,13 +41,23 @@ while getopts ":hs" opt; do
 done
 
 if [ -z "${VIRTUAL_ENV}" ]; then
-    if [ $EUID != 0 ]; then
+    # Determine what type of terminal it is running in
+    uname_kernel_name="$(uname -s)"
+    case "${uname_kernel_name}" in
+        Linux*)     machine=Linux;;
+        Darwin*)    machine=Mac;;
+        CYGWIN*)    machine=Cygwin;;
+        *)          machine="UNKNOWN:${uname_kernel_name}"
+    esac
+    echo "Running on ${machine}"
+
+    if [[ $EUID != 0 && ${machine} != Cygwin ]]; then
         echo "Root access is required. Please run with sudo or as root."
         exit 1
     fi
 
     # install tools for the script, like pip
-    if [[ ! -v skip_req ]]; then
+    if [[ skip_req -eq 0 ]]; then
         which apt-get > /dev/null
         aptget_missing=$?
         which yum > /dev/null
@@ -57,8 +69,24 @@ if [ -z "${VIRTUAL_ENV}" ]; then
         elif [[ "$yum_missing" == "0" ]]; then
             yum install python-devel python-setuptools gcc git libxml2-devel libxslt-devel openssl-devel libffi-devel || exit 1
             easy_install pip || exit 1
+        elif [[ "${machine}" == Cygwin ]]; then
+            setup-x86_64.exe -q -P bash_completion -P gcc-core -P git -P libffi-devel -P libxml2 -P libxslt -P openssl-devel || exit 1
+        elif [[ "${machine}" == Mac ]]; then
+            # If brew does not exist, install homebrew
+            which brew > /dev/null
+            if [[ $? != "0" ]]; then
+                /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" || exit 1
+            fi
+
+            # Install python 2.7
+            # It comes with setuptools, pip, openssl
+            su "$SUDO_USER" -c 'brew install python@2' || exit 1
+            export PATH="/usr/local/opt/python2/bin:$PATH"
+
+            # Install gcc@4.9
+            su "$SUDO_USER" -c 'brew install gcc@4.9' || exit 1
         else
-            echo "No supported package managers detected (apt-get, yum)"
+            echo "No supported package managers detected (apt-get, yum, brew)"
             echo "Please ensure the following are installed on your system before continuing:"
             echo "python-dev python-setuptools gcc git python-pip"
             read -p "Continue with installation? y/n: " PACKMAN_CONTINUE_INPUT

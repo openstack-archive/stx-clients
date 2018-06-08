@@ -1,6 +1,6 @@
 Summary: Remote-Clients
 Name: remote-clients
-Version: 2.0.3
+Version: 2.0.4
 Release: %{tis_patch_ver}%{?_tis_dist}
 License: Apache-2.0
 Group: devel
