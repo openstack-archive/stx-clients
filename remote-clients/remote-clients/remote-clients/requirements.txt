@@ -10,5 +10,6 @@ python-swiftclient==3.1.0
 python-muranoclient==0.11.0
 python-magnumclient==2.3.1
 python-ironicclient==1.7.1
+pankoclient==0.3.0
 bs4
 osprofiler
