@@ -10,8 +10,8 @@ URL: unknown
 
 Source0: %{name}-%{version}.tar.gz
 
-BuildRequires: python-ceilometerclient-sdk
 BuildRequires: python-cinderclient-sdk
+BuildRequires: python-gnocchiclient-sdk
 BuildRequires: python-glanceclient-sdk
 BuildRequires: python-heatclient-sdk
 BuildRequires: python-keystoneclient-sdk
