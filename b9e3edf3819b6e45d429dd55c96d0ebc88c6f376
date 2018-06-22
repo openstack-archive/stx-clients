@@ -1,0 +1,8 @@
+Code-Review+2: jerry <jerry.sun@windriver.com>
+Workflow+1: jerry <jerry.sun@windriver.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Fri, 22 Jun 2018 20:24:16 +0000
+Reviewed-on: https://review.openstack.org/577532
+Project: openstack/stx-clients
+Branch: refs/heads/master
