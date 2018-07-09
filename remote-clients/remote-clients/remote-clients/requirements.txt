@@ -13,3 +13,4 @@ python-ironicclient==1.7.1
 pankoclient==0.3.0
 bs4
 osprofiler
+aodhclient==0.9.0
