@@ -1,4 +1,5 @@
 cgtsclient
+fmclient
 python-ceilometerclient
 python-cinderclient
 python-glanceclient

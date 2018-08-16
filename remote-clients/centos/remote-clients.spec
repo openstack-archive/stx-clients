@@ -24,6 +24,7 @@ BuildRequires: cgts-client-sdk
 BuildRequires: python-osc-lib-sdk
 BuildRequires: python-muranoclient-sdk
 BuildRequires: distributedcloud-client-sdk
+BuildRequires: python-fmclient-sdk
 
 %define cgcs_sdk_deploy_dir /opt/deploy/cgcs_sdk
 %define remote_client_dir /usr/share/remote-clients
