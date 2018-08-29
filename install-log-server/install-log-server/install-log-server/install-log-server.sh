@@ -164,7 +164,7 @@ elif [[ ! -z $APT_GET_CMD ]]; then
     fi
     if $install_curl ; then
         echo "curl is required for Elasticsearch package download."
-        apt-get install curl 
+        apt-get install curl
     fi
     if $install_iptables_save; then
         echo "iptables-persistent is required for Logstash with protected ports under 1024."
@@ -178,8 +178,7 @@ fi
 
 get_install_package() {
     # The URL parameter is required for this function
-    if [ -z "$1" ]
-    then
+    if [ -z "$1" ] ; then
         return 1
     fi
 
@@ -205,8 +204,7 @@ get_install_package() {
 }
 
 boot_at_startup () {
-    if [ -z "$1" ]
-    then
+    if [ -z "$1" ] ; then
         echo "A URL parameter must be passed to boot_at_startup"
         return 1
     fi
@@ -243,8 +241,7 @@ if [[ "$_java" ]]; then
         echo "Elasticsearch recommends that you use the Oracle JDK version 1.8.0_73."
         echo "Refer to the current documentation: https://www.elastic.co/guide/en/elasticsearch/reference/current/_installation.html"
         read -p "Would you like to install Oracle Java 8? y/n: " PACKMAN_CONTINUE_INPUT
-        while [[ "$PACKMAN_CONTINUE_INPUT" != "y" && "$PACKMAN_CONTINUE_INPUT" != "n" ]]
-        do
+        while [[ "$PACKMAN_CONTINUE_INPUT" != "y" && "$PACKMAN_CONTINUE_INPUT" != "n" ]] ; do
             echo invalid input: $PACKMAN_CONTINUE_INPUT
             read -p "Continue with installation? y/n: " PACKMAN_CONTINUE_INPUT
         done
@@ -263,7 +260,7 @@ if [[ "$install_java" == "y" ]]; then
         apt-get install oracle-java8-set-default
     else
         wget --no-cookies --no-check-certificate --header "Cookie: gpw_e24=http%3A%2F%2Fwww.oracle.com%2F; oraclelicense=accept-securebackup-cookie" "http://download.oracle.com/otn-pub/java/jdk/8u92-b14/jre-8u92-linux-x64.rpm"
-        yum localinstall jre-8u92-linux-x64.rpm 
+        yum localinstall jre-8u92-linux-x64.rpm
     fi
     echo "Java installation complete."
 fi
@@ -282,7 +279,7 @@ wait_for_elasticsearch() {
             break 2
         fi
     done
-    
+
     if [ "$ES_ACTIVE" == false ]; then
         echo "Elasticsearch is not responding. Please resolve the issue and rerun the script."
         echo "More details at: https://www.elastic.co/guide/en/elasticsearch/reference/current/cluster-stats.html"
@@ -333,7 +330,7 @@ config_logstash() {
     # Update conf file with IP_ADDRESS
     sed -i "s/    host => .*/    host => \"${IP_ADDRESS}\"/" /etc/logstash/conf.d/wrs-logstash.conf
     sed -i "s/.*elasticsearch { hosts.*/    elasticsearch { hosts => [\"${IP_ADDRESS}:9200\"] }/" /etc/logstash/conf.d/wrs-logstash.conf
-    
+
     # install certificate, key, and set TLS config
     if [ $TLS_PARAM_COUNT -eq 2 ]; then
         mkdir -p /etc/pki/tls/certs
@@ -355,20 +352,20 @@ config_logstash() {
 
         port_in_use=$( netstat -an | grep 10514 )
         if [ -f "/bin/systemctl" ] ; then
-             systemctl enable iptables
+            systemctl enable iptables
         else
-                update-rc.d iptables defaults 95 10
+            update-rc.d iptables defaults 95 10
         fi
         netstat -an | grep 10514
         # Delete any pre-existing rules forwarding to port 10514
         old_rules_list=$(iptables -t nat --line-numbers -L | grep '^[0-9].*10514' | awk '{ print $1 }' | tac)
         old_rules_count=0
-        for i in $old_rules_list; do 
+        for i in $old_rules_list ; do
             iptables -t nat -D PREROUTING $i
             old_rules_count=$((old_rules_count+1))
         done
         echo Deleted $old_rules_count NAT PREROUTING rules to Logstash listening authorized port 10514.
-        
+
         # Update conf file with non-priviledged port
         echo "Priviledged port $PORT redirected to Logstash listening authorized port 10514."
         sed -i "s/    port =>.*/    port => 10514/" /etc/logstash/conf.d/wrs-logstash.conf
@@ -395,7 +392,7 @@ config_logstash() {
             netfilter-persistent save
             netfilter-persistent reload
         elif [ -f "/etc/init.d/iptables-persistent" ] ; then
-            /etc/init.d/iptables-persistent save 
+            /etc/init.d/iptables-persistent save
             /etc/init.d/iptables-persistent reload
         elif [ -f "/etc/centos-release" ] ; then
             # CentOS 7 https://wiki.centos.org/HowTos/Network/IPTables

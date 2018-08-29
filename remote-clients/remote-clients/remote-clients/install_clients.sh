@@ -90,8 +90,7 @@ if [ -z "${VIRTUAL_ENV}" ]; then
             echo "Please ensure the following are installed on your system before continuing:"
             echo "python-dev python-setuptools gcc git python-pip"
             read -p "Continue with installation? y/n: " PACKMAN_CONTINUE_INPUT
-            while [[ "$PACKMAN_CONTINUE_INPUT" != "y" && "$PACKMAN_CONTINUE_INPUT" != "n" ]]
-            do
+            while [[ "$PACKMAN_CONTINUE_INPUT" != "y" && "$PACKMAN_CONTINUE_INPUT" != "n" ]] ; do
                 echo invalid input: $PACKMAN_CONTINUE_INPUT
                 read -p "Continue with installation? y/n: " PACKMAN_CONTINUE_INPUT
             done
@@ -120,18 +119,19 @@ if ! pip install "pbr>=1.8"; then
     exit 1
 fi
 
-while true;do echo -n . 1>&3;sleep 1;done &
+while true; do
+    echo -n . 1>&3
+    sleep 1
+done &
 trap 'kill $! 2>/dev/null' EXIT
-for file in *.tgz
-do
+for file in *.tgz ; do
     if ! tar -zxf $file; then
         echo "Failed to extract file $file" 1>&3
         exit 1
     fi
 done
 
-if [ -f "requirements.txt" ]
-then
+if [ -f "requirements.txt" ] ; then
     if ! pip -q install -r requirements.txt -c upper_constraints.txt; then
         echo "Failed to install requirements" 1>&3
         exit 1
@@ -145,17 +145,17 @@ echo [DONE] 1>&3
 # because some of our tis clients are older than the most recent openstack clients
 pip freeze | grep -wF -f installed_clients.txt | xargs pip uninstall -y
 
-for dir in ./*/
-do
+for dir in ./*/ ; do
     cd $dir
-    if [ -f "setup.py" ]
-    then
+    if [ -f "setup.py" ] ; then
         echo -n Installing $(python setup.py --name) ... 1>&3
     fi
 
-    while true;do echo -n . 1>&3;sleep 1;done &
-    if [ -f "requirements.txt" ]
-    then
+    while true; do
+        echo -n . 1>&3
+        sleep 1
+    done &
+    if [ -f "requirements.txt" ] ; then
         grep -vwF -f ../installed_clients.txt requirements.txt > requirements.txt.temp
         mv requirements.txt.temp requirements.txt
         sed -i -e 's/# Apache-2.0//g' requirements.txt
@@ -165,8 +165,7 @@ do
         fi
     fi
 
-    if [ -f "setup.py" ]
-    then
+    if [ -f "setup.py" ] ; then
         if ! python setup.py -q install; then
             echo "Failed to install $(python setup.py --name)" 1>&3
             exit 1
@@ -174,14 +173,11 @@ do
     fi
 
     # install bash completion
-    if [ -d "tools" -a -z "${VIRTUAL_ENV}" ]
-    then
+    if [ -d "tools" -a -z "${VIRTUAL_ENV}" ] ; then
         cd tools
-            if [ -d "/etc/bash_completion.d" ]
-            then
+            if [ -d "/etc/bash_completion.d" ] ; then
                 count=`ls -1 *.bash_completion 2>/dev/null | wc -l`
-                if [ $count != 0 ]
-                then
+                if [ $count != 0 ] ; then
                     cp *.bash_completion /etc/bash_completion.d
                 fi
             fi

@@ -71,8 +71,8 @@ ip=""
 suffix=""
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )" # Directory that this script is contained in
 if [ $UID -ne 0 ]; then
-  echo $'\tWarning: This script must be run as \'root\' user to restart ELK services. Please rerun with sudo.\n'
-  exit 1
+    echo $'\tWarning: This script must be run as \'root\' user to restart ELK services. Please rerun with sudo.\n'
+    exit 1
 fi
 # Check to see if required config files are present
 if [[ ! -f "/etc/logstash/conf.d/wrs-logstash.conf" ]]; then
@@ -139,7 +139,7 @@ function help {
     echo "       originally used when setting up ELK to work with a remote logger."
     echo "      -If you use the --remote option and logs fail to populate, or you get an error about elasticsearch"
     echo "       make sure that the port your remote logger is using is still being forwarded correctly by re-entering"
-    echo "       iptables -t nat -A PREROUTING -p UDP -m udp --dport $PORT -j REDIRECT --to-ports 10514" 
+    echo "       iptables -t nat -A PREROUTING -p UDP -m udp --dport $PORT -j REDIRECT --to-ports 10514"
     echo "       OR"
     echo "       ip6tables -t nat -A PREROUTING -p tcp -m tcp --dport $PORT -j REDIRECT --to-ports 10514"
     echo "       make sure you correctly specify tcp or udp, and use iptables for IPV4 and ip6tables for IPV6"
@@ -259,7 +259,7 @@ dist="$(lsb_release -a)"
 while [[ $# > 0 ]]; do
     arg="$1"
     case $arg in
-        
+
         -h|--help)
         help
         ;;
