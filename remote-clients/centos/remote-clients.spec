@@ -15,13 +15,11 @@ BuildRequires: python-gnocchiclient-sdk
 BuildRequires: python-glanceclient-sdk
 BuildRequires: python-heatclient-sdk
 BuildRequires: python-keystoneclient-sdk
-BuildRequires: python-keystoneauth1-sdk
 BuildRequires: python-neutronclient-sdk
 BuildRequires: python-novaclient-sdk
 BuildRequires: python-openstackclient-sdk
 BuildRequires: python-openstacksdk-sdk
 BuildRequires: cgts-client-sdk
-BuildRequires: python-osc-lib-sdk
 BuildRequires: python-muranoclient-sdk
 BuildRequires: distributedcloud-client-sdk
 BuildRequires: python-fmclient-sdk
