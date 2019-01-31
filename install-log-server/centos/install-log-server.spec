@@ -10,19 +10,20 @@ URL: unknown
 Source0: %{name}-%{version}.tar.gz
 
 %define cgcs_sdk_deploy_dir /opt/deploy/cgcs_sdk
+%global debug_package %{nil}
 
 %description
 Titanium Cloud log server installation
 
 %prep
 %setup
-mv %name wrs-%{name}-%{version}
-tar czf wrs-%{name}-%{version}.tgz wrs-%{name}-%{version}
+
+%build
+make NAME=%{name} VERSION=%{version}
 
 # Install for guest-client package
 %install
-install -D -m 644 wrs-%{name}-%{version}.tgz %{buildroot}%{cgcs_sdk_deploy_dir}/wrs-%{name}-%{version}.tgz
+make install NAME=%{name} VERSION=%{version} SDK_DEPLOY_DIR=%{buildroot}%{cgcs_sdk_deploy_dir}
 
 %files
 %{cgcs_sdk_deploy_dir}/wrs-%{name}-%{version}.tgz
-

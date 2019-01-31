@@ -26,21 +26,24 @@ BuildRequires: python-fmclient-sdk
 
 %define cgcs_sdk_deploy_dir /opt/deploy/cgcs_sdk
 %define remote_client_dir /usr/share/remote-clients
+%global debug_package %{nil}
 
 %description
 Remote-Client files
 
 %prep
 %setup
-mv %{name} wrs-%{name}-%{version}
-find %{remote_client_dir} -name "*.tgz" -exec cp '{}' wrs-%{name}-%{version}/ \;
-sed -i 's/xxxVERSIONxxx/%{version}/g' wrs-%{name}-%{version}/README
-tar czf wrs-%{name}-%{version}.tgz wrs-%{name}-%{version}
+
+%build
+make NAME=%{name} \
+     VERSION=%{version} \
+     REMOTE_CLIENT_DIR=%{remote_client_dir}
 
 # Install for guest-client package
 %install
-install -D -m 644 wrs-%{name}-%{version}.tgz %{buildroot}%{cgcs_sdk_deploy_dir}/wrs-%{name}-%{version}.tgz
+make install NAME=%{name} \
+     VERSION=%{version} \
+     SDK_DEPLOY_DIR=%{buildroot}%{cgcs_sdk_deploy_dir}
 
 %files
 %{cgcs_sdk_deploy_dir}/wrs-%{name}-%{version}.tgz
-
