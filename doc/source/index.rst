@@ -1,14 +1,14 @@
+=========================
 stx-clients Documentation
 =========================
 
-StarlingX Client Libraries
+The stx-clients project provides client libraries for StarlingX.
 
 .. toctree::
-   :maxdepth: 2
-   :caption: Contents:
+   :maxdepth: 1
 
 Links
-=====
+-----
 
 * Source: `stx-clients`_
 * Code Review: `Gerrit`_
@@ -17,9 +17,3 @@ Links
 .. _stx-clients: https://git.starlingx.io/cgit/stx-clients/
 .. _Gerrit: https://review.openstack.org/#/q/project:openstack/stx-clients
 .. _Storyboard: https://storyboard.openstack.org/#!/project/openstack/stx-clients
-
-Indices and Tables
-==================
-
-* :ref:`search`
-* :ref:`genindex`
