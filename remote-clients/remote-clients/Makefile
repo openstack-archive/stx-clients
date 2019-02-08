@@ -8,10 +8,14 @@ REMOTE_CLIENT_DIR ?= /usr/share/remote-clients
 SDK_DEPLOY_DIR ?= /opt/deploy/cgcs_sdk
 
 all:
-	mv $(NAME) wrs-$(NAME)-$(VERSION)
-	find $(REMOTE_CLIENT_DIR) -name "*.tgz" -exec cp '{}' wrs-$(NAME)-$(VERSION)/ \;
-	sed -i 's/xxxVERSIONxxx/$(VERSION)/g' wrs-$(NAME)-$(VERSION)/README
-	tar czf wrs-$(NAME)-$(VERSION).tgz wrs-$(NAME)-$(VERSION)
+	@if [ -d wrs-$(NAME)-$(VERSION) ]; then \
+		echo "wrs-$(NAME)-$(VERSION) exists";\
+		else\
+			mv $(NAME) wrs-$(NAME)-$(VERSION);\
+		fi
+	@find $(REMOTE_CLIENT_DIR) -name "*.tgz" -exec cp '{}' wrs-$(NAME)-$(VERSION)/ \;
+	@sed -i 's/xxxVERSIONxxx/$(VERSION)/g' wrs-$(NAME)-$(VERSION)/README
+	@tar czf wrs-$(NAME)-$(VERSION).tgz wrs-$(NAME)-$(VERSION)
 
 install:
-	install -D -m 644 wrs-$(NAME)-$(VERSION).tgz $(SDK_DEPLOY_DIR)/wrs-$(NAME)-$(VERSION).tgz
+	@install -D -m 644 wrs-$(NAME)-$(VERSION).tgz $(SDK_DEPLOY_DIR)/wrs-$(NAME)-$(VERSION).tgz
