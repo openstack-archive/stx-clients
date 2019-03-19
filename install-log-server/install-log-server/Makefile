@@ -1,6 +1,8 @@
 #
 # SPDX-License-Identifier: Apache-2.0
 #
+# Copyright (C) 2019 Intel Corporation
+#
 
 NAME ?= install-log-server
 VERSION ?= 1.1.2
