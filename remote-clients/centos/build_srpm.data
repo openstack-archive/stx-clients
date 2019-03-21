@@ -1,3 +1,0 @@
-SRC_DIR=remote-clients
-COPY_LIST="$SRC_DIR/*"
-TIS_PATCH_VER=5

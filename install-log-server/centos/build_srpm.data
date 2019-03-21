@@ -1,3 +1,0 @@
-SRC_DIR=install-log-server
-COPY_LIST="$SRC_DIR/*"
-TIS_PATCH_VER=4
