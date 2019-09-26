@@ -1,5 +1,0 @@
-===========
-stx-clients
-===========
-
-StarlingX Clients
